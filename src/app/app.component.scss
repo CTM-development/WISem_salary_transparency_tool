@@ -1,0 +1,25 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+section{
+	display: table;
+}
+
+.nav-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.nav-flex-container {
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
