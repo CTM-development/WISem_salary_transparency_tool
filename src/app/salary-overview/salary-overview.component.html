@@ -1,1 +1,11 @@
-<p>salary-overview works!</p>
+<p>salary-overview for {{name}}</p>
+<div class="bars">
+    <mat-grid-list cols="1" rowHeight="5:1">
+        <mat-grid-tile (click)="onSave()" class="social">Social Component</mat-grid-tile>
+        <mat-grid-tile class="skills">Skill based Amount</mat-grid-tile>
+        <mat-grid-tile class="location">Location Compensation </mat-grid-tile>
+        <mat-grid-tile class="basic">Basic Salary</mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<p *ngIf="animal">{{animal}}</p>

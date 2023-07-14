@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // angular material 
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -27,11 +29,12 @@ import { SalaryOverviewComponent } from './salary-overview/salary-overview.compo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-		MatToolbarModule,
-		MatIconModule,
-		MatButtonModule
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { name = "Ed Example"; }
