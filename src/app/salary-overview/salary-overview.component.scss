@@ -3,6 +3,7 @@
     color: white;
     width: 30%;
     padding: 2%;
+    display: table-cell;
 }
 
 .location {
@@ -22,4 +23,11 @@
 
 .skills {
     background-color: rgb(28, 136, 50);
+}
+
+.image_optimization {
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    height: 20%;
 }

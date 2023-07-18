@@ -2,8 +2,8 @@
   flex: 1 1 auto;
 }
 
-section{
-	display: table;
+section {
+  display: table;
 }
 
 .nav-button-row {
@@ -14,12 +14,27 @@ section{
 .nav-flex-container {
   display: flex;
   justify-content: space-between;
-	align-items: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .nav-button-container {
   display: flex;
   justify-content: center;
-  width: 120px;
+  width: 150px;
+}
+
+.logo {
+  margin-left: 0.5%;
+}
+
+.heading-title {
+
+  color: white;
+}
+
+button {
+  background-color: rgb(66, 204, 66);
+  display: flex;
+  justify-content: center;
 }
