@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class LandingPageComponent {
 
-  name = "test";
+  name = "John Doe";
 }
