@@ -6,12 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./salary-graphic.component.scss']
 })
 export class SalaryGraphicComponent {
-  animal = "";
-  onSave() {
-
-    this.animal = "Lion";
-  }
-
-
   
 }

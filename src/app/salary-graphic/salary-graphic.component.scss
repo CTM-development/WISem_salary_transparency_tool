@@ -1,29 +1,26 @@
-// this is just for developing and testing
-
-mat-grid-tile {
-  background: lightblue;
+mat-grid-tile{
+	border: 2px solid black;
+	cursor: pointer;
 }
 
-
-
-
-.bars {
-	background-color: rgba(216, 215, 215, 0.359);
+.salary-tower {
+	background-color: rgb(221, 221, 221);
 	color: white;
-	width: 30%;
 	padding: 2%;
-	display: table-cell;
+	width: 15rem;
 }
-
+.bonus{
+	background-color: rgb(79, 204, 6);
+}
+.spacer{
+}
 .location {
 	background-color: rgb(38, 121, 93);
 }
 
-
 .basic {
 	background-color: rgb(29, 32, 22);
 }
-
 
 .social {
 	background-color: rgb(50, 205, 120);
@@ -34,9 +31,3 @@ mat-grid-tile {
 	background-color: rgb(28, 136, 50);
 }
 
-.image_optimization {
-	position: absolute;
-	top: 3%;
-	right: 20px;
-	height: 5%;
-}
