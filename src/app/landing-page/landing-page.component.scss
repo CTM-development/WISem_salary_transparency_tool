@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'OpenSauceOne';
+  src: url('~src/fonts/OpenSauceOne-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSauceOne-Bold';
+  src: url('~src/fonts/OpenSauceOne-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.welcome{
+  letter-spacing: 2px;
+}
+
+p {
+  margin: 100px 0 0 60px;
+  font-family: 'OpenSauceOne';
+  //font-weight: Bold;
+  font-size: x-large;
+  line-height: normal;
+}
+
+h1 {
+  margin: 60px 0 0 60px;
+  font-family: 'OpenSauceOne-Bold';
+  font-size: 100px;
+}
+
+.wrapIt{
+  width: 40%;
+}
+
+.overview {
+  margin: 60px 0 0 60px;
+  font-family: OpenSauceOne;
+  font-size: x-large;
+  width: 300px;
+  //color: #66cc66;
+  border-color: #35686d;
+  height: 50px;
+  border-width: 1.5px;
+}
+
+[mat-stroked-button]:hover {
+  background-color: #66cc66;
+  border-color: #35686d;
+  //color: white !important;
+}
+
+.splash{
+  height: 40%;
+  position: absolute;
+  top: 10%;
+  left: 75%;
+  float: right;
+}
+
+.welcome2{
+  font-weight: bold;
+  font-size: xx-large;
+  position: relative;
+  float: right;
+  margin-right: 25%;
+  margin-top: 0;
+}
+
+.logo{
+  width: 100px;
+  //margin: 0 -20px 0 -20px;
+  //margin: 10px -50px 0 -50px;
+  //position: absolute;
+}
+
+.rows{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 380px 0 0;
+  //align-items: center;
+}
+
+.labels{
+  align-content: space-around;
+  font-family: OpenSauceOne;
+}
+
+.children{
+  margin: 0 50px 10px 50px;
+}
+
