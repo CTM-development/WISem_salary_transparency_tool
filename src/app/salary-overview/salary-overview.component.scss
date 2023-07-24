@@ -3,8 +3,12 @@ mat-grid-tile {
   background: rgb(150, 150, 150);
 }
 
+mat-grid-list{
+	justify-content: space-between;
+}
+
 .main-frame{
-	width: 100%;
+
 }
 
 .image_optimization {

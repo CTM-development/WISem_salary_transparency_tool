@@ -1,19 +1,32 @@
-mat-grid-tile{
+mat-grid-tile:hover {
 	border: 2px solid black;
 	cursor: pointer;
 }
 
-.salary-tower {
-	background-color: rgb(221, 221, 221);
-	color: white;
-	padding: 2%;
-	width: 15rem;
+mat-grid-list{
+	width: 50%;
+	height: 100%;
 }
-.bonus{
+
+.salary-tower {
+	display: flex;
+	justify-content: space-between;
+
+	background-color: rgb(221, 213, 213);
+	color: white;
+
+	flex-basis: 20px;
+	flex-grow: 1;
+
+	z-index: 1;
+}
+
+.bonus {
 	background-color: rgb(79, 204, 6);
 }
-.spacer{
-}
+
+.spacer {}
+
 .location {
 	background-color: rgb(38, 121, 93);
 }
@@ -30,4 +43,3 @@ mat-grid-tile{
 .skills {
 	background-color: rgb(28, 136, 50);
 }
-
