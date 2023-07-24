@@ -1,1 +1,27 @@
 <p>salary-graphic works!</p>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+	<mat-grid-tile>1</mat-grid-tile>
+	<mat-grid-tile>
+		<b>salary graphic goes here</b>
+		<div class="bars">
+			<mat-grid-list cols="1" rowHeight="5:1">
+				<mat-grid-tile (click)="onSave()" class="social">Social Component</mat-grid-tile>
+				<mat-grid-tile class="skills">Skill based Amount</mat-grid-tile>
+				<mat-grid-tile class="location">Location Compensation </mat-grid-tile>
+				<mat-grid-tile class="basic">Basic Salary</mat-grid-tile>
+			</mat-grid-list>
+
+
+		</div>
+	</mat-grid-tile>
+	<mat-grid-tile colspan="2">
+		<b>static salary stuff goes here</b>
+	</mat-grid-tile>
+	<mat-grid-tile colspan="2">
+		<b>dynamic salary stuff goes here</b>
+	</mat-grid-tile>
+</mat-grid-list>
+<p>
+	<img src="../../assets/logos/MF-Icon-Optimization.svg" class="image_optimization">
+</p>

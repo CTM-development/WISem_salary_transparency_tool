@@ -81,7 +81,7 @@ export class AppDB extends Dexie {
         name: "Max Mustermann",
         role_id: 1,
         location_id: 1,
-        hiring_date: new Date(2012,11,30),
+        hiring_date: new Date(2021,11,30),
         percentage_solidary_contribution: 0,
       },
     ]);

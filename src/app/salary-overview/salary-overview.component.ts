@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 @Component({
   selector: 'app-salary-overview',
@@ -6,13 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./salary-overview.component.scss']
 })
 export class SalaryOverviewComponent {
-  animal = "";
-  onSave() {
 
-    this.animal = "Lion";
-  }
-
-
-  name = "Test";
-
+	name = "Test";
 }

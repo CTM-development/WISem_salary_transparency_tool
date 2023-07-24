@@ -17,7 +17,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SkillTreeComponent } from './skill-tree/skill-tree.component';
 import { SalaryOverviewComponent } from './salary-overview/salary-overview.component';
-import { SalaryOverviewGraphicComponent } from './salary-overview-graphic/salary-overview-graphic.component';
 import { SalaryGraphicComponent } from './salary-graphic/salary-graphic.component';
 import { SalaryStaticDetailsComponent } from './salary-static-details/salary-static-details.component';
 import { SalaryDynamicDetailsComponent } from './salary-dynamic-details/salary-dynamic-details.component';
@@ -29,7 +28,6 @@ import { SalaryDynamicDetailsComponent } from './salary-dynamic-details/salary-d
     LandingPageComponent,
     SkillTreeComponent,
     SalaryOverviewComponent,
-    SalaryOverviewGraphicComponent,
     SalaryGraphicComponent,
     SalaryStaticDetailsComponent,
     SalaryDynamicDetailsComponent
