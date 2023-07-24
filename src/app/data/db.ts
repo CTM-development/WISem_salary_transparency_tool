@@ -1,12 +1,18 @@
 import Dexie, { Table } from 'dexie';
 
+export interface Location {
+  id?: number;
+  name: string;
+	base_salary: number;
+}
 export interface Employee {
   id?: number;
   location_id: number;
   role_id: number;
   name: string;
-  hired_since: number;
-  percentage_solidary_contribution: number;
+	hiring_date: Date;
+	percentage_solidary_contribution: number;
+	skill_fullfillment_id?: number;
 }
 export interface Role {
   id?: number;
@@ -60,7 +66,7 @@ export class AppDB extends Dexie {
         name: "Max Muster",
         role_id: 1,
         location_id: 1,
-        hired_since: Date.parse("01.01.2020"),
+        hiring_date: new Date("01.01.2020"),
         percentage_solidary_contribution: 0,
 
       },
@@ -68,21 +74,19 @@ export class AppDB extends Dexie {
         name: "Maxle Muster",
         role_id: 2,
         location_id: 1,
-        hired_since: Date.parse("01.01.2018"),
+        hiring_date: new Date("01.01.2018"),
         percentage_solidary_contribution: 0,
       },
       {
         name: "Max Mustermann",
         role_id: 1,
         location_id: 1,
-        hired_since: Date.parse("01.01.2023"),
+        hiring_date: new Date(2012,11,30),
         percentage_solidary_contribution: 0,
       },
     ]);
 
   }
-
-
 }
 
 export const db = new AppDB();
