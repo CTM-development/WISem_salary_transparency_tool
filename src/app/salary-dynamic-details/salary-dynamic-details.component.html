@@ -7,7 +7,7 @@
 			<h3>{{this.hardskills_current}}/{{this.hardskills_max}}</h3>
 		</div>
 		<div *ngFor="let category of getOnlyHardCategories()" style="font-weight: bold;">
-			<p>{{category.name}}, </p>
+			<p>{{category.name}}</p>
 		</div>
 	</div>
 	<div class="flex-item">
@@ -16,15 +16,15 @@
 			<h3>{{this.softkills_current}}/{{this.softskills_max}}</h3>
 		</div>
 		<div *ngFor="let category of getOnlySoftCategories()" style="font-weight: bold;">
-			<p>{{category.name}}, </p>
+			<p>{{category.name}}</p>
 		</div>
 	</div>
 	<div class="flex-item">
 		<h3>Time At Company</h3>
 		<div class="progress-window">
-			<h3>{{this.time_current}}/{{this.time_max}}</h3>
+			<h3>{{this.time_current*2}}/{{this.time_max}}</h3>
 		</div>
-		<p>Member of Mindfuel since {{employee.hiring_date | date}} leading to {{this.time_current}} years of
+		<p>Member of Mindfuel since {{employee.hiring_date | date}} meaning {{this.time_current}} years of
 			employment.</p>
 	</div>
 </div>

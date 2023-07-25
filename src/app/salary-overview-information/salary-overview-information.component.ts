@@ -9,6 +9,6 @@ dynamic_salary: ;
 })
 export class SalaryOverviewInformationComponent {
 
-	static_salary: number = 45000;
-	dynamic_salary: number = 12000;
+  static_salary: number = 52500;
+  dynamic_salary: number = 15000;
 }
