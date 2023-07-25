@@ -1,19 +1,48 @@
-// this is just for developing purposes
-mat-grid-tile {
-  background: rgb(79, 214, 255);
-	overflow: hide;
+h1 {
+  font-family: 'OpenSauceOne-Bold';
+  font-size: 90px;
 }
 
-mat-grid-list{
-	display: flex;
-
-	justify-content: space-between;
-	align-content: space-around;
-	flex-direction: row;
-
-	align-items: center;
+h2 {
+  font-family: 'OpenSauceOne-Bold';
+  font-size: 55px;
 }
 
-.mat-grid-tile-content{
-	flex-grow: 1;
+.main-grid-container{
+	padding: 20px 20px 20px 20px;
+
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 45vh 30vh 30vh;
+	grid-template-areas: 
+		"overview-information salary-graphic"
+		"static-information static-information"
+		"dynamic-information dynamic-information"
+		;
+	grid-gap: 40px 40px;
+	grid-auto-flow: dense;
+}
+
+.main-grid-item{
+	padding: 20px 20px 20px 20px;
+	background-color: #ededed;
+
+	
+}
+#main-overview-information{
+	grid-area: overview-information;
+
+}
+
+#main-salary-graphic{
+	grid-area: salary-graphic;
+}
+
+#main-static-information{
+	grid-area: static-information;
+}
+
+#main-dynamic-information{
+	grid-area: dynamic-information;
 }
