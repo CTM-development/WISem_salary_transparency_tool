@@ -61,7 +61,7 @@ export class SalaryDynamicDetailsComponent {
 	}
 
 	calculateHardSkillsCurrent() {
-		let sum = 30;
+		let sum = 28;
 		for (let cat of this.your_categories.filter(cat => cat.is_hard_skill)) {
 
 			for (let skill of this.your_skills) {

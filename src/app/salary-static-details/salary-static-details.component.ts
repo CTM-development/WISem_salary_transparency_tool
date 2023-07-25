@@ -8,8 +8,8 @@ import { db, Role, Employee, SkillCategory, SkillFulfillment, Location, RoleCate
   styleUrls: ['./salary-static-details.component.scss'],
 })
 export class SalaryStaticDetailsComponent {
-  basis_salary_value: number = 20000;
-  location_salary_value: number = 5000;
+  basis_salary_value: number = 25000;
+  location_salary_value: number = 2500;
   role_salary_value: number = 15000;
 
   employee: Employee = { name: "Frieda Muster", hiring_date: new Date(1900, 1, 1), percentage_solidary_contribution: 0, location_id: 1, role_id: 1 };

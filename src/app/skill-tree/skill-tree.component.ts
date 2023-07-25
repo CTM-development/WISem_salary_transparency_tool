@@ -124,6 +124,26 @@ export class SkillTreeComponent {
   }
 
   getCategoriesForRole() {
+    this.your_categories = [{
+      id: 1,
+      name: "Datalake Storage",
+      is_hard_skill: true,
+    }
+      ,
+    {
+      id: 2,
+      name: "Datalake Metadata",
+      is_hard_skill: true,
+    },
+    {
+      id: 3,
+      name: "Softskills",
+      is_hard_skill: false,
+    },
+
+    ]
+    return
+
     let mapping = this.roleCategoryMapping.filter((rS) => rS.role_id == this.role!.id);
 
     for (let m of mapping) {
@@ -133,6 +153,54 @@ export class SkillTreeComponent {
   }
 
   getSkillsForRole() {
+    this.your_skills = [{
+      name: "AWS S3",
+      weight: 10,
+      category_id: 1,
+    },
+    {
+      name: "Google Cloud storage",
+      weight: 10,
+      category_id: 1,
+    },
+    {
+      name: "Microsoft Azure",
+      weight: 10,
+      category_id: 1,
+    },
+    {
+      name: "Hadoop HDFS",
+      weight: 10,
+      category_id: 1,
+    },
+    {
+      name: "Databrick",
+      weight: 10,
+      category_id: 2,
+    },
+    {
+      name: "AWS Glue",
+      weight: 10,
+      category_id: 2,
+    },
+    {
+      name: "Hive",
+      weight: 10,
+      category_id: 2,
+    },
+    {
+      name: "Communication Skills",
+      weight: 10,
+      category_id: 3,
+    },
+
+    {
+      name: "Teamwork",
+      weight: 10,
+      category_id: 3,
+    },
+    ]
+    return;
     for (let cat of this.your_categories) {
       this.your_skills.push(this.all_skills.filter((skill) => skill.category_id == cat.id)[0]);
     }
@@ -140,11 +208,17 @@ export class SkillTreeComponent {
   }
 
   getFullfillmentOfSkill(skillId: number) {
+    return skillId;
     return this.fulfillment.filter((ful) => ful.skill_id == skillId)[0].fulfillment;
   }
 
   getRequiredAmountOfCategory(categoryId: number) {
+    return 5;
     return this.roleCategoryMapping.filter((m) => m.skill_category_id == categoryId)[0].required_amount;
+  }
+
+  getfilteredSkills(category_id: number) {
+    return this.your_skills.filter(s => s.category_id == category_id);
   }
 
 

@@ -14,20 +14,20 @@
 		<br>
 		<br>
 
-		<div *ngIf="this.location && this.location[0]">
+		<div *ngIf="this.location && this.location.name">
 			<p>Your location is </p>
-			<h4>{{this.location[0].name}}!</h4>
+			<h4>{{this.location.name}}!</h4>
 			<p>
-				This adds {{this.location[0].salary| currency:'':'symbol':'3.0'}} to your base salary.</p>
+				This adds {{this.location.salary| currency:'':'symbol':'3.0'}} to your base salary.</p>
 		</div>
 	</div>
 	<div class="flex-item">
 		<h3>Role</h3>
 		<br>
 		<br>
-		<div *ngIf="this.employee_role && this.employee_role[0]">
+		<div *ngIf="this.employee && this.employee.role_id">
 			<p>Your role is </p>
-			<h4>{{this.employee_role[0].name}}!</h4>
+			<h4>{{this.role!.name}}!</h4>
 			<p>
 				This adds {{this.role_salary_value| currency:'':'symbol':'3.0'}} to your base salary.</p>
 		</div>
