@@ -8,19 +8,24 @@ h2 {
   font-size: 55px;
 }
 
+h3{
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 35px;
+}
+
 .main-grid-container{
-	padding: 20px 20px 20px 20px;
+	padding: 0px 20px 20px 20px;
 
 	display: grid;
 
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 45vh 30vh 30vh;
+	grid-template-rows: 40vh 55vh 55vh;
 	grid-template-areas: 
 		"overview-information salary-graphic"
 		"static-information static-information"
 		"dynamic-information dynamic-information"
 		;
-	grid-gap: 40px 40px;
+	grid-gap: 60px 60px;
 	grid-auto-flow: dense;
 }
 
