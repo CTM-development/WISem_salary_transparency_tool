@@ -1,19 +1,26 @@
+p {
+	margin: 0;
+}
+
 .salary-graphic-grid-container {
 	height: 100%;
-	width: 40%;
+	width: 60%;
 
 	display: grid;
 
 	grid-template-columns: auto;
-	grid-template-rows: auto auto auto auto auto auto auto;
+	grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
 	grid-template-areas:
-		"Bonus"
-		"Time"
-		"Softskills"
-		"Hardskills"
-		"Role"
-		"Location"
-		"Base"
+		"Bonus ."
+		"TeamCredit ."
+		"SpacerTop ."
+		"Time Dynamic"
+		"Softskills Dynamic"
+		"Hardskills Dynamic"
+		"SpacerBottom ."
+		"Role Static"
+		"Location Static"
+		"Base Static"
 	;
 	grid-gap: 5px;
 }
@@ -31,4 +38,76 @@
 .salary-graphic-grid-item:hover {
 	cursor: pointer;
 	border: 1px solid black;
+}
+
+.static-section {
+	background-color: #00232b;
+	color: white;
+}
+
+.dynamic-section {
+	background-color: #66cc66;
+	color: white;
+}
+
+.salary-graphic-grid-spacer {
+	background-color: #ededed;
+	font-size: 20px;
+	font-weight: bold;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+}
+
+#salary-bonus {
+	grid-area: Bonus;
+}
+
+#salary-teamcredit {
+	grid-area: TeamCredit;
+}
+
+#salary_spacertop {
+	grid-area: SpacerTop;
+}
+
+#salary_time {
+	grid-area: Time;
+}
+
+#salary_softskills {
+	grid-area: Softskills;
+}
+
+
+#salary_hardskills {
+	grid-area: Hardskills;
+}
+
+#salary-spacer-bottom {
+	grid-area: SpacerBottom;
+}
+
+#salary-role {
+	grid-area: Role;
+}
+
+#salary-location {
+	grid-area: Location;
+}
+
+
+#salary-base {
+	grid-area: Base;
+}
+
+#static-explanation {
+	grid-area: Static;
+}
+
+#dynamic-explanation {
+	grid-area: Dynamic;
 }
