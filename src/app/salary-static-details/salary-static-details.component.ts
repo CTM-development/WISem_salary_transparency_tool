@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./salary-static-details.component.scss'],
 })
 export class SalaryStaticDetailsComponent {
-
+	basis_salary_value: number = 20000;
+	location_salary_value: number = 5000;
+	role_salary_value: number = 15000;
 }
