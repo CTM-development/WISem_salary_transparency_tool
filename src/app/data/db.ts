@@ -363,6 +363,14 @@ export class AppDB extends Dexie {
       return null;
     }
   }
+  async loadLocations() {
+    try {
+      return await db.locations.toArray();
+    } catch (error) {
+      console.error('Error retrieving Locations:', error);
+      return null;
+    }
+  }
 
   async loadfulfillment(employee_id: number) {
     try {

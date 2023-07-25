@@ -24,7 +24,6 @@ export class SkillTreeComponent {
   your_categories: SkillCategory[] = [];
 
 
-  roles$ = liveQuery(() => db.roles.toArray());
   fulfillment: SkillFulfillment[] = [];
 
   identifyList(index: number, role: Role) {
@@ -33,7 +32,7 @@ export class SkillTreeComponent {
 
 
   async ngOnInit() {
-    await this.loadEmployees(4);
+    await this.loadEmployee(4);
     this.employee = this.employees[0];
     await this.loadRoles();
     this.role = this.roles.filter((role) => role.id == this.employee.role_id)[0];
@@ -49,7 +48,7 @@ export class SkillTreeComponent {
     console.log(this.your_skills);
   }
 
-  async loadEmployees(id: number) {
+  async loadEmployee(id: number) {
     try {
       this.employees = await db.employees.where("id").equals(id).toArray();
     } catch (error) {
