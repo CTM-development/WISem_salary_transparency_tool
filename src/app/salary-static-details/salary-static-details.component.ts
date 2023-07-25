@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-salary-static-details',
@@ -7,5 +6,7 @@ import {MatCardModule} from '@angular/material/card';
   styleUrls: ['./salary-static-details.component.scss'],
 })
 export class SalaryStaticDetailsComponent {
-
+	basis_salary_value: number = 20000;
+	location_salary_value: number = 5000;
+	role_salary_value: number = 15000;
 }

@@ -34,7 +34,6 @@ export interface SkillCategory {
   id?: number;
   name: String;
   is_hard_skill: boolean;
-
 }
 
 export interface RoleCategoryMapping {

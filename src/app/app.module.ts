@@ -20,6 +20,7 @@ import { SalaryOverviewComponent } from './salary-overview/salary-overview.compo
 import { SalaryGraphicComponent } from './salary-graphic/salary-graphic.component';
 import { SalaryStaticDetailsComponent } from './salary-static-details/salary-static-details.component';
 import { SalaryDynamicDetailsComponent } from './salary-dynamic-details/salary-dynamic-details.component';
+import { SalaryOverviewInformationComponent } from './salary-overview-information/salary-overview-information.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SalaryDynamicDetailsComponent } from './salary-dynamic-details/salary-d
     SalaryOverviewComponent,
     SalaryGraphicComponent,
     SalaryStaticDetailsComponent,
-    SalaryDynamicDetailsComponent
+    SalaryDynamicDetailsComponent,
+    SalaryOverviewInformationComponent
   ],
   imports: [
     BrowserModule,

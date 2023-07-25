@@ -1,0 +1,16 @@
+<div class="grid-container">
+	<div class="grid-item" id="salary-header">
+		<h1>Overview</h1>
+	</div>
+	<div class="grid-item" id="full-salary">
+		<h2>{{this.static_salary + this.dynamic_salary | currency:'':'symbol':'3.0'}}</h2>
+	</div>
+	<div class="grid-item" id="static-salary">
+		<h2>static amount</h2>
+		<h2>{{this.static_salary | currency:'':'symbol':'3.0'}}</h2>
+	</div>
+	<div class="grid-item" id="dynamic-salary">
+		<h2>dynamic amount</h2>
+		<h2>{{this.dynamic_salary | currency:'':'symbol':'3.0'}}</h2>
+	</div>
+</div>

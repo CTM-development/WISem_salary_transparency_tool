@@ -1,38 +1,16 @@
+<h2>Static Salary Range</h2>
+
 <div class="flex-container">
 	<div class="flex-item">
-		<mat-card class="card-content">
-			<mat-card-header>
-				<mat-card-title>
-					<b>Basis</b>
-				</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				Basis content
-			</mat-card-content>
-		</mat-card>
+		<h3>Basis</h3>
+		<p>{{this.basis_salary_value | currency:'':'symbol':'3.0'}}</p>
 	</div>
 	<div class="flex-item">
-		<mat-card>
-			<mat-card-header>
-				<mat-card-title>
-					<b>Location</b>
-				</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				Location content
-			</mat-card-content>
-		</mat-card>
+		<h3>Location</h3>
+		<p>{{this.location_salary_value | currency:'':'symbol':'3.0'}}</p>
 	</div>
 	<div class="flex-item">
-		<mat-card>
-			<mat-card-header>
-				<mat-card-title>
-					<b>Role</b>
-				</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				Role content
-			</mat-card-content>
-		</mat-card>
+		<h3>Role</h3>
+		<p>{{this.role_salary_value | currency:'':'symbol':'3.0'}}</p>
 	</div>
 </div>

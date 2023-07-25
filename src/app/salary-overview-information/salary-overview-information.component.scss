@@ -1,0 +1,67 @@
+h1 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 80px;
+}
+
+h2 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 50px;
+}
+
+.grid-container {
+	width: 100%;
+	height: 100%;
+
+	display: grid;
+
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"header header"
+		"full-salary full-salary"
+		"static-salary dynamic-salary";
+
+	grid-gap: 20px 20px;
+	grid-auto-flow: dense;
+
+	justify-items: stretch;
+	align-items: stretch;
+
+	justify-content: stretch;
+}
+
+.grid-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+}
+
+#salary-header {
+	grid-area: header;
+
+}
+
+#full-salary {
+	grid-area: full-salary;
+
+	background-color: #35686d;
+	color: white;
+
+}
+
+#static-salary {
+	grid-area: static-salary;
+
+	background-color: #00232b;
+	color: white;
+}
+
+#dynamic-salary {
+	grid-area: dynamic-salary;
+
+	background-color: #66cc66;
+	color: white;
+}

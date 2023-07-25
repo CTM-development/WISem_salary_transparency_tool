@@ -1,38 +1,22 @@
+<h2>Dynamic Salary Range</h2>
+
 <div class="flex-container">
 	<div class="flex-item">
-		<mat-card class="card-content">
-			<mat-card-header>
-				<mat-card-title>
-					<b>Hardskills</b>
-				</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				Hardskill content
-			</mat-card-content>
-		</mat-card>
+		<h3>Hardskills</h3>
+		<div class="progress-window">
+			<h3>{{this.hardskills_current}}/{{this.hardskills_max}}</h3>
+		</div>
 	</div>
 	<div class="flex-item">
-		<mat-card>
-			<mat-card-header>
-				<mat-card-title>
-					<b>Softskills</b>
-				</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				Softskill content
-			</mat-card-content>
-		</mat-card>
+		<h3>Softskills</h3>
+		<div class="progress-window">
+			<h3>{{this.softkills_current}}/{{this.softskills_max}}</h3>
+		</div>
 	</div>
 	<div class="flex-item">
-		<mat-card>
-			<mat-card-header>
-				<mat-card-title>
-					<b>Time at company</b>
-				</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				Time at company content
-			</mat-card-content>
-		</mat-card>
+		<h3>Time At Company</h3>
+		<div class="progress-window">
+			<h3>{{this.time_current}}/{{this.time_max}}</h3>
+		</div>
 	</div>
 </div>
