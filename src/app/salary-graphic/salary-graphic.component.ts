@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
 	styleUrls: ['./salary-graphic.component.scss']
 })
 export class SalaryGraphicComponent {
+	
+	static_salary_value: number = 45000;
+	
 	constructor() {
 
 	}
