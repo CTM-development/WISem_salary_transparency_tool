@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 // angular material 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,7 +43,7 @@ import { SalaryOverviewInformationComponent } from './salary-overview-informatio
     MatIconModule,
     MatButtonModule,
     MatGridListModule,
-		MatCardModule
+		MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

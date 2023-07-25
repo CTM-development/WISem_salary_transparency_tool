@@ -453,6 +453,24 @@ export class AppDB extends Dexie {
     }
   }
 
+	async loadLocation(id: number) {
+    try {
+      return await db.locations.where("id").equals(id).toArray();
+    } catch (error) {
+      console.error('Error retrieving locations:', error);
+      return null;
+    }
+  }
+
+	async loadRole(id: number) {
+    try {
+      return await db.roles.where("id").equals(id).toArray();
+    } catch (error) {
+      console.error('Error retrieving roles:', error);
+      return null;
+    }
+  }
+
 
 }
 

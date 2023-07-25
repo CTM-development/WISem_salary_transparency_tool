@@ -1,27 +1,54 @@
-<body>
-    <h1>Skill-Tree</h1>
+<div class="skill-tree-page-container">
+	<div class="skill-tree-header">
+		<h1>Skill-Tree</h1>
 
-    <p>Hello {{employee.name}}, you are currently a {{role?.name}}.</p>
-    <p>Want to reach new goals? We at Mindfuel always look out for new challenges!</p>
+		<p>Hello {{employee.name}}, you are currently a {{role?.name}}.</p>
+		<p>
+			Want to reach new goals? We at Mindfuel always look out for new challenges!
+		</p>
+	</div>
+	<div class="layout-grid">
+		<div class="carrer-track-container">
+			<h3>
+				You could go for these following roles on your career track:
+			</h3>
 
-    <img src="../../assets/logos/MF-Icon-Change.svg" alt="Logo for change" height="20%">
+			<div *ngFor="let role of followingRoles" class="following-roles-container">
+				<div class="following-roles-item">
+
+					<h4>
+						<mat-icon>school</mat-icon> {{ role.name }}
+					</h4>
+				</div>
+			</div>
+		</div>
+		<div class="skill-collection-container">
+			<h3>Your current role benefits from following skills:</h3>
+
+			<div *ngFor="let category of your_categories">
+				<p class="role-category">
+					<mat-icon>
+						chevron_right
+					</mat-icon>
+					{{category.name}}, potential fulfillment of {{getRequiredAmountOfCategory(category.id!)}}
+				</p>
+				<br>
+				<ul *ngFor="let skill of your_skills">
+					<li>
+						<p>
+							{{ skill.name }}, currently at leve {{getFullfillmentOfSkill(skill.id!)}}
+						</p>
+					</li>
+				</ul>
+				<br>
+			</div>
+		</div>
+	</div>
 
 
-    <p>You could go for these following roles on your career track:</p>
-
-    <div *ngFor="let role of followingRoles">
-        <p>{{ role.name }}</p>
-    </div>
-
-    <p>Your current role affords following skills:</p>
-
-    <div *ngFor="let category of your_categories" style="font-weight: bold;">
-        <p>{{category.name}}, needs fulfillment of {{getRequiredAmountOfCategory(category.id!)}}</p>
-        <div *ngFor="let skill of your_skills" style="font-weight: normal;">
-            <p>-- {{ skill.name }}, current fulfillment of {{getFullfillmentOfSkill(skill.id!)}}</p>
-        </div>
-    </div>
 
 
+	<img src="../../assets/logos/MF-Icon-Change.svg" alt="Logo for change" height="20%"
+		style="float: right; position: absolute; z-index: 1;">
 
-</body>
+</div>

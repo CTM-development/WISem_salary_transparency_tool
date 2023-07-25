@@ -1,17 +1,35 @@
 <h2>Static Salary Range</h2>
 
-<div class="flex-container">
+<div #salaryStaticDetailsSection class="flex-container">
 	<div class="flex-item">
-		<h3>Basis</h3>
-		<p>{{this.basis_salary_value | currency:'':'symbol':'3.0'}}</p>
+		<h3>Base Salary</h3>
+		<br>
+		<br>
+
+		<p>The Mindfuel global base salary is</p>
+		<h4>{{this.basis_salary_value | currency:'':'symbol':'3.0'}}</h4>
 	</div>
 	<div class="flex-item">
 		<h3>Location</h3>
-		<p>{{this.location_salary_value | currency:'':'symbol':'3.0'}}</p>
-		<p>{{location.name}}</p>
+		<br>
+		<br>
+
+		<div *ngIf="this.location && this.location[0]">
+			<p>Your location is </p>
+			<h4>{{this.location[0].name}}!</h4>
+			<p>
+				This adds {{this.location[0].salary| currency:'':'symbol':'3.0'}} to your base salary.</p>
+		</div>
 	</div>
 	<div class="flex-item">
 		<h3>Role</h3>
-		<p>{{this.role_salary_value | currency:'':'symbol':'3.0'}}</p>
+		<br>
+		<br>
+		<div *ngIf="this.employee_role && this.employee_role[0]">
+			<p>Your role is </p>
+			<h4>{{this.employee_role[0].name}}!</h4>
+			<p>
+				This adds {{this.role_salary_value| currency:'':'symbol':'3.0'}} to your base salary.</p>
+		</div>
 	</div>
 </div>

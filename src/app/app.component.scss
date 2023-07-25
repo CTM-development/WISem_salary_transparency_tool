@@ -1,40 +1,49 @@
+mat-toolbar {
+	position: fixed;
+	top: 0;
+}
+
+.nav{
+	margin-bottom: 60px;
+}
+
 .example-spacer {
-  flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 section {
-  display: table;
+	display: table;
 }
 
 .nav-button-row {
-  display: table-cell;
-  max-width: 600px;
+	display: table-cell;
+	max-width: 600px;
 }
 
 .nav-flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .nav-button-container {
-  display: flex;
-  justify-content: center;
-  width: 150px;
+	display: flex;
+	justify-content: center;
+	width: 150px;
 }
 
 .logo {
-  margin-left: 0.5%;
+	margin-left: 0.5%;
 }
 
 .heading-title {
 
-  color: white;
+	color: white;
 }
 
 button {
-  background-color: rgb(66, 204, 66);
-  display: flex;
-  justify-content: center;
+	background-color: rgb(66, 204, 66);
+	display: flex;
+	justify-content: center;
 }
