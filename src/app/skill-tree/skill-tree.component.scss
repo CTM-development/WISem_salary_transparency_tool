@@ -1,3 +1,63 @@
 body {
-    text-align: center;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 90px;
+
+	margin-bottom: 30px;
+}
+
+h2 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 55px;
+}
+
+h3 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 30px;
+}
+
+h4 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 30px;
+	margin: 0;
+}
+
+
+.layout-grid {
+	display: grid;
+
+	grid-template-columns: auto auto;
+	grid-template-rows: auto;
+}
+
+.skill-tree-page-container {
+	margin-left: 100px;
+	margin-top: 100px;
+}
+
+.skill-tree-header {
+	margin-bottom: 50px;
+}
+
+.following-roles-container {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.following-roles-item {
+	margin: 10px;
+	padding: 20px;
+
+	background-color: #42cc42;
+	color: white;
+	font-weight: bold;
+
+	border: 1px solid black;
+	border-radius: 10px;
 }
