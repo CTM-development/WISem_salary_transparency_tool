@@ -1,5 +1,4 @@
-body {
-	text-align: center;
+mat-icon{
 }
 
 h1 {
@@ -22,6 +21,12 @@ h3 {
 h4 {
 	font-family: 'OpenSauceOne-Bold';
 	font-size: 30px;
+	margin: 0;
+}
+
+h4 {
+	font-family: 'OpenSauceOne-Bold';
+	font-size: 25px;
 	margin: 0;
 }
 
@@ -60,4 +65,11 @@ h4 {
 
 	border: 1px solid black;
 	border-radius: 10px;
+}
+
+.role-category{
+margin: 0;
+
+	font-weight: bold;
+
 }

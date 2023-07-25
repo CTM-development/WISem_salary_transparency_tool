@@ -15,18 +15,32 @@
 
 			<div *ngFor="let role of followingRoles" class="following-roles-container">
 				<div class="following-roles-item">
-					<h4>{{ role.name }}</h4>
+
+					<h4>
+						<mat-icon>school</mat-icon> {{ role.name }}
+					</h4>
 				</div>
 			</div>
 		</div>
 		<div class="skill-collection-container">
-			<h3>Your current role affords following skills:</h3>
+			<h3>Your current role benefits from following skills:</h3>
 
-			<div *ngFor="let category of your_categories" style="font-weight: bold;">
-				<p>{{category.name}}, needs fulfillment of {{getRequiredAmountOfCategory(category.id!)}}</p>
-				<div *ngFor="let skill of your_skills" style="font-weight: normal;">
-					<p>-- {{ skill.name }}, current fulfillment of {{getFullfillmentOfSkill(skill.id!)}}</p>
-				</div>
+			<div *ngFor="let category of your_categories">
+				<p class="role-category">
+					<mat-icon>
+						chevron_right
+					</mat-icon>
+					{{category.name}}, potential fulfillment of {{getRequiredAmountOfCategory(category.id!)}}
+				</p>
+				<br>
+				<ul *ngFor="let skill of your_skills">
+					<li>
+						<p>
+							{{ skill.name }}, currently at leve {{getFullfillmentOfSkill(skill.id!)}}
+						</p>
+					</li>
+				</ul>
+				<br>
 			</div>
 		</div>
 	</div>
