@@ -140,13 +140,13 @@ export class AppDB extends Dexie {
         role_id: 1,
         skill_category_id: 1,
         skill_category_weight: 6,
-        required_amount: 2
+        required_amount: 40
       },
       {
         role_id: 1,
         skill_category_id: 2,
         skill_category_weight: 2,
-        required_amount: 2
+        required_amount: 40
       },
 
 
@@ -154,76 +154,76 @@ export class AppDB extends Dexie {
       {
         role_id: 2,
         skill_category_id: 1,
-        skill_category_weight: 6,
-        required_amount: 2
+        skill_category_weight: 40,
+        required_amount: 40
       },
       {
         role_id: 2,
         skill_category_id: 3,
-        skill_category_weight: 4,
-        required_amount: 2
+        skill_category_weight: 40,
+        required_amount: 40
       },
 
       {
         role_id: 3,
         skill_category_id: 1,
-        skill_category_weight: 3,
-        required_amount: 2
+        skill_category_weight: 40,
+        required_amount: 40
       },
       {
         role_id: 3,
         skill_category_id: 2,
-        skill_category_weight: 3,
-        required_amount: 2
+        skill_category_weight: 40,
+        required_amount: 40
       },
 
       {
         role_id: 4,
         skill_category_id: 1,
-        skill_category_weight: 3,
-        required_amount: 2
+        skill_category_weight: 40,
+        required_amount: 40
       },
       {
         role_id: 4,
         skill_category_id: 3,
-        skill_category_weight: 2,
-        required_amount: 2
+        skill_category_weight: 40,
+        required_amount: 40
       }
     ]);
 
     await db.skills.bulkAdd([{
       name: "AWS S3",
-      weight: 1,
+      weight: 10,
       category_id: 1,
     },
     {
       name: "Google Cloud storage",
-      weight: 1,
+      weight: 10,
       category_id: 1,
     },
     {
       name: "Microsoft Azure",
-      weight: 1,
+      weight: 10,
       category_id: 1,
     },
     {
       name: "Hadoop HDFS",
-      weight: 1,
+      weight: 10,
       category_id: 1,
     },
     {
       name: "Databrick",
-      weight: 1,
+      weight: 10,
       category_id: 2,
     },
     {
       name: "AWS Glue",
-      weight: 1,
+      weight: 10,
       category_id: 2,
     },
     {
       name: "Hive",
-      weight: 1,
+      weight: 10,
       category_id: 2,
     },
 
@@ -276,7 +276,7 @@ export class AppDB extends Dexie {
       {
         employee_id: 4,
         skill_id: 1,
-        fulfillment: 1,
+        fulfillment: 0,
       },
       {
         employee_id: 4,
@@ -287,22 +287,27 @@ export class AppDB extends Dexie {
       {
         employee_id: 4,
         skill_id: 3,
-        fulfillment: 1,
+        fulfillment: 2,
       },
       {
         employee_id: 4,
         skill_id: 4,
-        fulfillment: 1,
+        fulfillment: 3,
       },
       {
         employee_id: 4,
         skill_id: 5,
-        fulfillment: 1,
+        fulfillment: 2,
       },
       {
         employee_id: 4,
         skill_id: 6,
-        fulfillment: 1,
+        fulfillment: 2,
+      },
+      {
+        employee_id: 4,
+        skill_id: 7,
+        fulfillment: 2,
       },
 
     ])
@@ -310,7 +315,75 @@ export class AppDB extends Dexie {
 
 
   }
+
+
+  async loadRoles() {
+    try {
+      return await db.roles.toArray();
+    } catch (error) {
+      console.error('Error retrieving roles:', error);
+      return null;
+    }
+  }
+
+  async loadCategories() {
+    try {
+      return await db.skillCategory.toArray();
+    } catch (error) {
+      console.error('Error retrieving categories:', error);
+      return null;
+    }
+  }
+
+  async loadSkills() {
+    try {
+      return await db.skills.toArray();
+    } catch (error) {
+      console.error('Error retrieving skills:', error);
+      return null;
+    }
+  }
+
+
+  async loadCategoryRoleMapping() {
+    try {
+      return await db.roleCategoryMapping.toArray();
+    } catch (error) {
+      console.error('Error retrieving Role Mapping:', error);
+      return null;
+    }
+  }
+
+
+  async loadRoleCategoryMapping() {
+    try {
+      return await db.roleCategoryMapping.toArray();
+    } catch (error) {
+      console.error('Error retrieving Role Skill Mapping:', error);
+      return null;
+    }
+  }
+
+  async loadfulfillment(employee_id: number) {
+    try {
+      return await db.skillFulfillments.where("employee_id").equals(employee_id).toArray();
+    } catch (error) {
+      console.error('Error retrieving Skill Fulfillment:', error);
+      return null;
+    }
+  }
+
+
+  async loadEmployee(id: number) {
+    try {
+      return await db.employees.where("id").equals(id).toArray();
+    } catch (error) {
+      console.error('Error retrieving employees:', error);
+      return null;
+    }
+  }
+
+
 }
 
 export const db = new AppDB();
-
