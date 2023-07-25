@@ -36,7 +36,7 @@ export interface SkillCategory {
   is_hard_skill: boolean;
 }
 
-export interface RoleSkills {
+export interface RoleCategoryMapping {
   id?: number;
   role_id: number;
   skill_category_id: number;
@@ -54,20 +54,20 @@ export class AppDB extends Dexie {
   roles!: Table<Role, number>;
   employees!: Table<Employee, number>;
   locations!: Table<Location, number>;
-  roleSkills!: Table<RoleSkills, number>;
+  roleCategoryMapping!: Table<RoleCategoryMapping, number>;
   skills!: Table<Skill, number>;
   skillFulfillments!: Table<SkillFulfillment, number>;
   skillCategory!: Table<SkillCategory, number>;
 
   constructor() {
     super('ngdexieliveQuery');
-    this.version(8).stores({
+    this.version(9).stores({
       roles: '++id',
       employees: '++id',
       locations: '++id',
-      roleSkills: '++id',
+      roleCategoryMapping: '++id',
       skills: '++id',
-      skillFulfillments: '++id',
+      skillFulfillments: '++id, employee_id',
       skillCategory: "++id",
 
     });
@@ -77,13 +77,13 @@ export class AppDB extends Dexie {
   async populate() {
 
     await db.roles.bulkAdd([
-      {
+      { //id 1
 
         salary_min: 50000,
         salary_max: 70000,
-        name: "Lead Devs",
+        name: "Lead Dev",
       },
-      {
+      { //id2
 
         salary_min: 50000,
         salary_max: 70000,
@@ -91,7 +91,7 @@ export class AppDB extends Dexie {
         name: "Senior Dev",
       },
       {
-
+        //id3
         salary_min: 50000,
         salary_max: 70000,
         following_role: 2,
@@ -125,10 +125,17 @@ export class AppDB extends Dexie {
         hiring_date: new Date(2021, 11, 30),
         percentage_solidary_contribution: 0,
       },
+      {
+        name: "John Doe",
+        role_id: 3,
+        location_id: 2,
+        hiring_date: new Date(2022, 11, 30),
+        percentage_solidary_contribution: 0,
+      },
     ]);
 
 
-    await db.roleSkills.bulkAdd([
+    await db.roleCategoryMapping.bulkAdd([
       {
         role_id: 1,
         skill_category_id: 1,
@@ -141,23 +148,12 @@ export class AppDB extends Dexie {
         skill_category_weight: 2,
         required_amount: 2
       },
-      {
-        role_id: 3,
-        skill_category_id: 2,
-        skill_category_weight: 3,
-        required_amount: 2
-      },
-      {
-        role_id: 3,
-        skill_category_id: 2,
-        skill_category_weight: 3,
-        required_amount: 2
-      },
+
 
 
       {
         role_id: 2,
-        skill_category_id: 2,
+        skill_category_id: 1,
         skill_category_weight: 6,
         required_amount: 2
       },
@@ -167,6 +163,20 @@ export class AppDB extends Dexie {
         skill_category_weight: 4,
         required_amount: 2
       },
+
+      {
+        role_id: 3,
+        skill_category_id: 1,
+        skill_category_weight: 3,
+        required_amount: 2
+      },
+      {
+        role_id: 3,
+        skill_category_id: 2,
+        skill_category_weight: 3,
+        required_amount: 2
+      },
+
       {
         role_id: 4,
         skill_category_id: 1,
@@ -263,7 +273,40 @@ export class AppDB extends Dexie {
         fulfillment: 1,
       },
 
+      {
+        employee_id: 4,
+        skill_id: 1,
+        fulfillment: 1,
+      },
+      {
+        employee_id: 4,
+        skill_id: 2,
+        fulfillment: 1,
+      },
+
+      {
+        employee_id: 4,
+        skill_id: 3,
+        fulfillment: 1,
+      },
+      {
+        employee_id: 4,
+        skill_id: 4,
+        fulfillment: 1,
+      },
+      {
+        employee_id: 4,
+        skill_id: 5,
+        fulfillment: 1,
+      },
+      {
+        employee_id: 4,
+        skill_id: 6,
+        fulfillment: 1,
+      },
+
     ])
+
 
 
   }
