@@ -3,16 +3,16 @@ import Dexie, { Table } from 'dexie';
 export interface Location {
   id?: number;
   name: string;
-	base_salary: number;
+  base_salary: number;
 }
 export interface Employee {
   id?: number;
   location_id: number;
   role_id: number;
   name: string;
-	hiring_date: Date;
-	percentage_solidary_contribution: number;
-	skill_fullfillment_id?: number;
+  hiring_date: Date;
+  percentage_solidary_contribution: number;
+  skill_fullfillment_id?: number;
 }
 export interface Role {
   id?: number;
@@ -20,6 +20,32 @@ export interface Role {
   salary_min: number;
   salary_max: number;
   following_role?: number;
+}
+
+export interface SkillFulfillment {
+  id?: number;
+  skill_id: number;
+  employee_id: number;
+  fulfillment: number;
+}
+
+export interface Skill {
+  id?: number;
+  name: String;
+  is_hard_skill: boolean;
+}
+
+export interface RoleSkills {
+  id?: number;
+  role_id: number;
+  skill_id: number;
+  skill_weight: number;
+}
+
+export interface Location {
+  id?: number;
+  name: string;
+  salary: number;
 }
 
 export class AppDB extends Dexie {
@@ -66,7 +92,7 @@ export class AppDB extends Dexie {
         name: "Max Muster",
         role_id: 1,
         location_id: 1,
-        hiring_date: new Date("01.01.2020"),
+        hiring_date: new Date(2020, 12, 12),
         percentage_solidary_contribution: 0,
 
       },
@@ -74,14 +100,14 @@ export class AppDB extends Dexie {
         name: "Maxle Muster",
         role_id: 2,
         location_id: 1,
-        hiring_date: new Date("01.01.2018"),
+        hiring_date: new Date(2018, 1, 1),
         percentage_solidary_contribution: 0,
       },
       {
         name: "Max Mustermann",
         role_id: 1,
         location_id: 1,
-        hiring_date: new Date(2021,11,30),
+        hiring_date: new Date(2021, 11, 30),
         percentage_solidary_contribution: 0,
       },
     ]);
