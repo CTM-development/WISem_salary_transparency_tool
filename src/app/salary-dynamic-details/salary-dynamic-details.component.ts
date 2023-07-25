@@ -8,16 +8,16 @@ import { db, Role, Employee, SkillCategory, SkillFulfillment, Location, RoleCate
 	styleUrls: ['./salary-dynamic-details.component.scss']
 })
 export class SalaryDynamicDetailsComponent {
-	hardskills_max: number = 80;
+	hardskills_max: number = 70;
 	hardskills_current: number = 55;
 
 	softskills_max: number = 15;
-	softkills_current: number = 9;
+	softkills_current: number = 17;
 
-	time_max: number = 5;
+	time_max: number = 10;
 	time_current: number = 3;
 
-	employee: Employee = { name: "Frieda Muster", hiring_date: new Date(1900, 1, 1), percentage_solidary_contribution: 0, location_id: 1, role_id: 1 };
+	employee: Employee = { name: "Frieda Muster", hiring_date: new Date(2015, 1, 1), percentage_solidary_contribution: 0, location_id: 1, role_id: 1 };
 
 	roles: Role[] = [];
 	role?: Role;
@@ -43,7 +43,7 @@ export class SalaryDynamicDetailsComponent {
 		this.your_skills = (await db.loadSkills())!;
 		this.fulfillment = (await db.loadfulfillment(this.employee.id!))!;
 		this.getCategoriesForRole();
-		this.calculateHardSkillsMax();
+		//this.calculateHardSkillsMax();
 		this.calculateHardSkillsCurrent();
 		this.calculateSoftSkillsMax();
 		this.calculateSoftSkillsCurrent();
@@ -61,7 +61,7 @@ export class SalaryDynamicDetailsComponent {
 	}
 
 	calculateHardSkillsCurrent() {
-		let sum = 0;
+		let sum = 30;
 		for (let cat of this.your_categories.filter(cat => cat.is_hard_skill)) {
 
 			for (let skill of this.your_skills) {
@@ -119,7 +119,7 @@ export class SalaryDynamicDetailsComponent {
 		const timeDiffInMilliseconds = now.getTime() - this.employee.hiring_date.getTime();
 		const yearsSinceDate = timeDiffInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
 
-		this.time_current = Math.floor(yearsSinceDate);
+		this.time_current = Math.floor(yearsSinceDate) * 2;
 		if (this.time_current > this.time_max) this.time_current = this.time_max;
 	}
 

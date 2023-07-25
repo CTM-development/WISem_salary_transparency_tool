@@ -7,7 +7,7 @@
 			<h3>{{this.hardskills_current}}/{{this.hardskills_max}}</h3>
 		</div>
 		<div *ngFor="let category of getOnlyHardCategories()" style="font-weight: bold;">
-			<p>{{category.name}}, </p>
+			<p>{{category.name}}</p>
 		</div>
 	</div>
 	<div class="flex-item">
@@ -16,7 +16,7 @@
 			<h3>{{this.softkills_current}}/{{this.softskills_max}}</h3>
 		</div>
 		<div *ngFor="let category of getOnlySoftCategories()" style="font-weight: bold;">
-			<p>{{category.name}}, </p>
+			<p>{{category.name}}</p>
 		</div>
 	</div>
 	<div class="flex-item">

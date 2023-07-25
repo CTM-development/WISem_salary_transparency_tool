@@ -79,28 +79,28 @@ export class AppDB extends Dexie {
     await db.roles.bulkAdd([
       { //id 1
 
-        salary_min: 50000,
-        salary_max: 70000,
-        name: "Lead Dev",
+        salary_min: 70000,
+        salary_max: 90000,
+        name: "Lead Data Product Manager",
       },
       { //id2
 
         salary_min: 50000,
         salary_max: 70000,
         following_role: 1,
-        name: "Senior Dev",
+        name: "Medium Data Product Manager",
       },
       {
         //id3
-        salary_min: 50000,
-        salary_max: 70000,
+        salary_min: 25000,
+        salary_max: 45000,
         following_role: 2,
-        name: "Junior Dev",
+        name: "Junior Data Product Manager",
       },
     ]);
 
 
-    await db.locations.bulkAdd([{ name: "Munich", salary: 20000 }, { name: "Germany", salary: 10000 }, { name: "Switzerland", salary: 250000 }, { name: "Spain", salary: 5000 },]);
+    await db.locations.bulkAdd([{ name: "Munich", salary: 5000 }, { name: "Nuremberg", salary: 2500 }, { name: "Germany", salary: 2000 }, { name: "Switzerland", salary: 7500 }, { name: "Spain", salary: 1000 },]);
 
     await db.employees.bulkAdd([
       {
@@ -112,42 +112,31 @@ export class AppDB extends Dexie {
 
       },
       {
-        name: "Maxle Muster",
+        name: "Maxim Muster",
         role_id: 2,
         location_id: 1,
         hiring_date: new Date(2018, 1, 1),
         percentage_solidary_contribution: 0,
       },
       {
-        name: "Max Mustermann",
+        name: "John Doe",
         role_id: 1,
         location_id: 1,
         hiring_date: new Date(2021, 11, 30),
         percentage_solidary_contribution: 0,
       },
       {
-        name: "John Doe",
+        name: "Max Mustermann",
         role_id: 3,
         location_id: 2,
-        hiring_date: new Date(2022, 11, 30),
+        hiring_date: new Date(2019, 11, 30),
         percentage_solidary_contribution: 0,
       },
     ]);
 
 
     await db.roleCategoryMapping.bulkAdd([
-      {
-        role_id: 1,
-        skill_category_id: 1,
-        skill_category_weight: 6,
-        required_amount: 40
-      },
-      {
-        role_id: 1,
-        skill_category_id: 2,
-        skill_category_weight: 2,
-        required_amount: 40
-      },
+
 
 
 
@@ -158,37 +147,44 @@ export class AppDB extends Dexie {
         required_amount: 40
       },
       {
-        role_id: 2,
-        skill_category_id: 3,
-        skill_category_weight: 40,
-        required_amount: 40
-      },
-
-      {
-        role_id: 3,
-        skill_category_id: 1,
-        skill_category_weight: 40,
-        required_amount: 40
-      },
-      {
         role_id: 3,
         skill_category_id: 2,
-        skill_category_weight: 40,
-        required_amount: 40
+        skill_category_weight: 20,
+        required_amount: 2
       },
 
       {
-        role_id: 4,
+        role_id: 3,
         skill_category_id: 1,
-        skill_category_weight: 40,
-        required_amount: 40
+        skill_category_weight: 20,
+        required_amount: 2
       },
       {
-        role_id: 4,
+        role_id: 3,
         skill_category_id: 3,
-        skill_category_weight: 40,
-        required_amount: 40
-      }
+        skill_category_weight: 20,
+        required_amount: 2
+      },
+
+      {
+        role_id: 3,
+        skill_category_id: 4,
+        skill_category_weight: 20,
+        required_amount: 2
+      },
+      {
+        role_id: 3,
+        skill_category_id: 7,
+        skill_category_weight: 20,
+        required_amount: 16 //for softskills
+      },
+      {
+        role_id: 3,
+        skill_category_id: 6,
+        skill_category_weight: 20,
+        required_amount: 16
+      },
+
     ]);
 
     await db.skills.bulkAdd([{
@@ -226,6 +222,32 @@ export class AppDB extends Dexie {
       weight: 10,
       category_id: 2,
     },
+    {
+      name: "Communication Skills",
+      weight: 10,
+      category_id: 3,
+    },
+    {
+      name: "Leading Skills",
+      weight: 10,
+      category_id: 4,
+    },
+    {
+      name: "Teamwork",
+      weight: 10,
+      category_id: 5,
+    },
+    {
+      name: "...",
+      weight: 10,
+      category_id: 6,
+    },
+    {
+      name: "...",
+      weight: 10,
+      category_id: 7,
+    },
+
 
     ]);
 
@@ -238,7 +260,27 @@ export class AppDB extends Dexie {
       {
         name: "Datalake Metadata",
         is_hard_skill: true,
-      }
+      },
+      {
+        name: "Communication Skills",
+        is_hard_skill: false,
+      },
+      {
+        name: "Leading Skills",
+        is_hard_skill: false,
+      },
+      {
+        name: "Teamwork",
+        is_hard_skill: false,
+      },
+      {
+        name: "...",
+        is_hard_skill: true,
+      },
+      {
+        name: "...",
+        is_hard_skill: false,
+      },
     ]);
 
     await db.skillFulfillments.bulkAdd([
@@ -281,13 +323,13 @@ export class AppDB extends Dexie {
       {
         employee_id: 4,
         skill_id: 2,
-        fulfillment: 1,
+        fulfillment: 3,
       },
 
       {
         employee_id: 4,
         skill_id: 3,
-        fulfillment: 2,
+        fulfillment: 3,
       },
       {
         employee_id: 4,
@@ -297,17 +339,37 @@ export class AppDB extends Dexie {
       {
         employee_id: 4,
         skill_id: 5,
-        fulfillment: 2,
+        fulfillment: 4,
       },
       {
         employee_id: 4,
         skill_id: 6,
-        fulfillment: 2,
+        fulfillment: 3,
       },
       {
         employee_id: 4,
         skill_id: 7,
-        fulfillment: 2,
+        fulfillment: 4,
+      },
+      {
+        employee_id: 4,
+        skill_id: 8,
+        fulfillment: 4,
+      },
+      {
+        employee_id: 4,
+        skill_id: 10,
+        fulfillment: 4,
+      },
+      {
+        employee_id: 4,
+        skill_id: 11,
+        fulfillment: 4,
+      },
+      {
+        employee_id: 4,
+        skill_id: 12,
+        fulfillment: 3,
       },
 
     ])
