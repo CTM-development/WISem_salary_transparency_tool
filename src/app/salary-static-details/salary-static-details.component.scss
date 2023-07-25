@@ -1,0 +1,27 @@
+.flex-container {
+
+	width: 95vw;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	justify-content: space-between;
+
+}
+
+.flex-item {
+	min-width: 15vw;
+}
+
+mat-card-header {
+	align-items: flex-start;
+	justify-content: center;
+}
+
+mat-card-content {
+	display: flex;
+
+	align-items: flex-start;
+	justify-content: center;
+}

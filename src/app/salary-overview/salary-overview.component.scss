@@ -1,19 +1,19 @@
 // this is just for developing purposes
 mat-grid-tile {
-  background: rgb(150, 150, 150);
+  background: rgb(79, 214, 255);
+	overflow: hide;
 }
 
 mat-grid-list{
+	display: flex;
+
 	justify-content: space-between;
+	align-content: space-around;
+	flex-direction: row;
+
+	align-items: center;
 }
 
-.main-frame{
-
-}
-
-.image_optimization {
-    position: absolute;
-    bottom: 2%;
-    right: 20px;
-    height: 5%;
+.mat-grid-tile-content{
+	flex-grow: 1;
 }
